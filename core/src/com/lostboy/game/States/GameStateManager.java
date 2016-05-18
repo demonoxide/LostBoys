@@ -1,4 +1,4 @@
-package com.lostboy.game.States;
+package com.lostboy.game.states;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 

@@ -3,10 +3,9 @@ package com.lostboy.game;
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.lostboy.game.States.GameStateManager;
-import com.lostboy.game.States.MenuState;
+import com.lostboy.game.states.GameStateManager;
+import com.lostboy.game.states.MenuState;
 
 public class Lost_Boy extends ApplicationAdapter {
 	public static final int WIDTH = 480;
@@ -21,7 +20,7 @@ public class Lost_Boy extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		gsm = new GameStateManager();
-		Gdx.gl.glClearColor(0, 0, 0, 1);
+		Gdx.gl.glClearColor(1, 1, 1, 1);
 		gsm.push(new MenuState(gsm));
 	}
 

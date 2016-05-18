@@ -1,5 +1,6 @@
-package com.lostboy.game.States;
+package com.lostboy.game.states;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.lostboy.game.Lost_Boy;
@@ -18,12 +19,15 @@ public class MenuState extends State{
 
     @Override
     public void handleInput() {
-
+        if(Gdx.input.justTouched()){
+            gsm.set(new PlayState(gsm));
+            dispose();
+        }
     }
 
     @Override
     public void update(float dt) {
-
+        handleInput();
     }
 
     @Override
@@ -32,5 +36,11 @@ public class MenuState extends State{
         sb.draw(background, 0,0, Lost_Boy.WIDTH, Lost_Boy.HEIGHT);
         sb.draw(playBtn, (Lost_Boy.WIDTH / 2) - (playBtn.getWidth() / 2), Lost_Boy.HEIGHT / 2);
         sb.end();
+    }
+
+    @Override
+    public void dispose(){
+        background.dispose();
+        playBtn.dispose();
     }
 }
