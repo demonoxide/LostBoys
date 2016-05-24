@@ -38,8 +38,14 @@ public class PlayState extends State {
             bird.jump();
 //            tree = new Tree(Gdx.input.getX(), Gdx.input.getY());
         }
+//        if(Gdx.input.justTouched()){
+//            tree = new Tree(Gdx.input.getX(), Gdx.input.getY());
+//            trees.add(tree);
+//        }
         if(Gdx.input.justTouched()){
-            tree = new Tree(Gdx.input.getX(), Gdx.input.getY());
+            int x = Gdx.input.getX()/2;
+            int y = (Lost_Boy.HEIGHT - Gdx.input.getY())/2;
+            tree = new Tree(x, y);
             trees.add(tree);
         }
     }
